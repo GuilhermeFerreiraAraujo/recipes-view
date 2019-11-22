@@ -1,0 +1,17 @@
+.recipe-card {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 10px 0px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+
+.recipe-card:hover {
+    background-color: #E8E8E8;
+}
+
+.recipe-card-details {
+    text-align: left;
+    padding-left: 20px;
+}
