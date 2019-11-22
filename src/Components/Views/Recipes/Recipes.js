@@ -20,6 +20,7 @@ export class Recipes extends React.Component {
         }
 
         this.getRecipes = this.getRecipes.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -28,13 +29,22 @@ export class Recipes extends React.Component {
 
     getRecipes() {
         RecipeServices.GetRecipes(this.state.params).then(response => {
-            console.log(response.data.results);
             this.setState({
                 recipes: Array.from(response.data.results),
                 title: response.data.title
             })
         }).catch(ex => {
             console.log(ex);
+        });
+    }
+
+    handleChange(event) {
+        let params = this.state.params;
+
+        params[event.target.id] = event.target.value;
+
+        this.setState({
+            params
         });
     }
 
@@ -52,7 +62,9 @@ export class Recipes extends React.Component {
 
         return (
             <div>
-                <RecipeSearch />
+                <RecipeSearch handleSearch={this.getRecipes}
+                    onChange={this.handleChange}
+                    title={this.state.title}/>
                 {results}
             </div>
         );

@@ -16,8 +16,7 @@ export function GetRecipes(params) {
         if (params.page) {
             tmpObj.p = params.page;
         }
-
-        var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+        var queryString = '?' + Object.keys(tmpObj).map(key => key + '=' + tmpObj[key]).join('&');
     }
     return Client.Get(queryString)
 }
