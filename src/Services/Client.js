@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const appUrl = 'http://www.recipepuppy.com/api/';
+const appUrl = 'https://wooden-blackcurrant.glitch.me/getrecipies';
 
 export function Get(params) {
 
