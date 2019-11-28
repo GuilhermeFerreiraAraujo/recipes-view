@@ -13,7 +13,7 @@ export class Recipes extends React.Component {
             title: '',
             recipes: [],
             params: {
-                ingredients: '',
+                ingredients: [],
                 searchQuery: '',
                 page: ''
             }
@@ -21,6 +21,7 @@ export class Recipes extends React.Component {
 
         this.getRecipes = this.getRecipes.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleIngredientsChange = this.handleIngredientsChange.bind(this);
     }
 
     componentDidMount() {
@@ -35,6 +36,15 @@ export class Recipes extends React.Component {
             })
         }).catch(ex => {
             console.log(ex);
+        });
+    }
+
+    handleIngredientsChange(ingredients) {
+        let params = this.state.params;
+        params.ingredients = ingredients;
+
+        this.setState({
+            params
         });
     }
 
@@ -64,6 +74,8 @@ export class Recipes extends React.Component {
             <div>
                 <RecipeSearch handleSearch={this.getRecipes}
                     onChange={this.handleChange}
+                    handleIngredientsChange={this.handleIngredientsChange}
+                    ingredients={this.state.params.ingredients}
                     title={this.state.title}/>
                 {results}
             </div>

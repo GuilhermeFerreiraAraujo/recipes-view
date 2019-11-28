@@ -1,6 +1,9 @@
 import React from 'react';
 import TextBox from '../TextBox/TextBox';
 import CustomButtom from '../CustomButton/CustomButton';
+import TagsInput from 'react-tagsinput';
+import 'react-tagsinput/react-tagsinput.css'
+
 import './RecipeSearch.css';
 
 export class RecipeSearch extends React.Component {
@@ -18,10 +21,10 @@ export class RecipeSearch extends React.Component {
                             onChange={this.props.onChange} />
                     </div>
                     <div className='col-md-4 input-column'>
-                        <TextBox id='ingredients'
-                            name='Ingredients'
-                            placeholder='Enter ingredients'
-                            onChange={this.props.onChange} />
+                        <fieldset className="tags-input">
+                            <label>Ingredients</label>
+                            <TagsInput className='tags-component' placeholder="Enter Ingredient" value={this.props.ingredients} onChange={this.props.handleIngredientsChange} />
+                        </fieldset>
                     </div>
                     <div className='col-md-4 button-column'>
                         <CustomButtom name='Search'

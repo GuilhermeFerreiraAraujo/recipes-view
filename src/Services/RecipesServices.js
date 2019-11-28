@@ -6,7 +6,7 @@ export function GetRecipes(params) {
     if (params.ingredients !== '' || params.searchQuery !== '' || params.page !== '') {
 
         if (params.ingredients) {
-            tmpObj.i = params.ingredients;
+            tmpObj.i = params.ingredients.join(",");
         }
 
         if (params.searchQuery) {

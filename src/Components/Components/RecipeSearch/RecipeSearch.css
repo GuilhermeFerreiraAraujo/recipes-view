@@ -1,13 +1,35 @@
-
 .recipe-search {
     background-color: #D6EAF8;
     border-radius: 5px;
     margin: auto;
     padding: 20px 10px 20px 10px;
     padding-left: 10px;
-
+    height: 200px;
 }
 
 .button-column {
     margin-top: 30px;
+}
+
+.react-tagsinput-tag {
+  background-color: #343a40;
+  border-radius: 2px;
+  border: 1px solid #343a40;
+  color: white;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.tags-input {
+    text-align: left;
+}
+
+.tags-component {
+    background-color: white;
+    height: 30px;
 }
